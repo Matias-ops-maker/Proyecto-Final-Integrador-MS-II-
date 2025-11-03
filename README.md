@@ -16,9 +16,14 @@ y realizar compras de forma rápida, segura y eficiente.
 Objetivo general:
 Desarrollar un sistema web que permita la búsqueda, visualización y compra de repuestos de vehículos, organizados jerárquicamente por marca, modelo y año.
 Objetivos específicos:
-• Permitir el registro e inicio de sesión de usuarios.
-• Gestionar un catálogo jerárquico de productos por marca, vehículo, modelo y año.
-• Implementar filtros dinámicos para facilitar la búsqueda.
-• Permitir la compra de productos con carrito y confirmación.
-• Generar reportes de ventas en PDF y Excel.
-• Administrar usuarios, productos y categorías desde un panel de administración.
+Permitir el registro e inicio de sesión de usuarios.
+
+Gestionar un catálogo jerárquico de productos por marca, vehículo, modelo y año.
+
+Implementar filtros dinámicos para facilitar la búsqueda.
+
+Permitir la compra de productos con carrito y confirmación.
+
+Generar reportes de ventas en PDF y Excel.
+
+Administrar usuarios, productos y categorías desde un panel de administración.
