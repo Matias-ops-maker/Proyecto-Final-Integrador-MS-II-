@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Login</title>
+</head>
+<body>
+    <h1>Test de Login</h1>
+    <div>
+        <h3>Credenciales de prueba:</h3>
+        <ul>
+            <li><strong>Admin:</strong> admin@repuestos.com / admin123</li>
+            <li><strong>Usuario:</strong> juan@gmail.com / user123</li>
+            <li><strong>Usuario:</strong> maria@gmail.com / user123</li>
+        </ul>
+    </div>
+    
+    <div>
+        <h3>Test de API:</h3>
+        <button onclick="testLogin()">Probar Login Admin</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        async function testLogin() {
+            const result = document.getElementById('result');
+            result.innerHTML = 'Probando...';
+            
+            try {
+                const response = await fetch('http://localhost:4000/api/auth/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-API-Key': 'mi_api_key_super_secreta'
+                    },
+                    body: JSON.stringify({
+                        email: 'admin@repuestos.com',
+                        password: 'admin123'
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    result.innerHTML = '<p style="color: green;">✅ Login exitoso!</p><pre>' + JSON.stringify(data, null, 2) + '</pre>';
+                } else {
+                    result.innerHTML = '<p style="color: red;">❌ Error: ' + data.message + '</p>';
+                }
+            } catch (error) {
+                result.innerHTML = '<p style="color: red;">❌ Error de conexión: ' + error.message + '</p>';
+            }
+        }
+    </script>
+</body>
+</html>

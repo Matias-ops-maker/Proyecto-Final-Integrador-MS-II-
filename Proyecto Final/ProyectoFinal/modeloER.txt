@@ -1,0 +1,43 @@
+Modelo de Datos (ER resumido)
+
+Entidades principales:
+
+    User(id, nombre, email, hash, rol, creado_en)
+
+    Product(id, sku, nombre, descripción, precio, costo, imagen_url, stock, estado, brand_id, category_id, creado_en)
+
+    Brand(id, nombre)
+
+    Category(id, nombre, parent_id?)
+
+    Vehicle(id, marca, modelo, año_desde, año_hasta, motor?)
+
+    Fitment(id, product_id, vehicle_id) ← compatibilidad producto–vehículo
+
+    Order(id, user_id, total, estado, creado_en)
+
+    OrderItem(id, order_id, product_id, cantidad, precio_unitario)
+
+    Cart(id, user_id, actualizado_en)
+
+    CartItem(id, cart_id, product_id, cantidad)
+
+    Address(id, user_id, calle, ciudad, provincia, cp)
+
+    Payment(id, order_id, medio, status, transaccion_ref?) ← simulado
+
+    AuditLog(id, user_id, acción, entidad, entidad_id, timestamp)
+
+Relaciones clave:
+
+    Product N:1 Brand / Category
+
+    Product N:M Vehicle (vía Fitment)
+
+    User 1:1 Cart
+
+    Order 1:N OrderItem; User 1:N Order
+
+    User 1:N Address
+
+    Esto permite: buscar por parte, filtrar por categoría/marca, y también “mostrar solo productos compatibles con mi auto”.
