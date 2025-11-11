@@ -1,0 +1,41 @@
+services:
+  - type: web
+    name: repuestos-auto-backend
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run migrate
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 4000
+      - key: DB_HOST
+        fromDatabase:
+          name: repuestos-auto-db
+          property: host
+      - key: DB_USER
+        fromDatabase:
+          name: repuestos-auto-db
+          property: user
+      - key: DB_PASS
+        fromDatabase:
+          name: repuestos-auto-db
+          property: password
+      - key: DB_NAME
+        fromDatabase:
+          name: repuestos-auto-db
+          property: database
+      - key: JWT_SECRET
+        generateValue: true
+      - key: API_KEY
+        generateValue: true
+      - key: FRONTEND_URL
+        value: https://repuestos-auto-frontend.onrender.com
+    healthCheckPath: /health
+
+databases:
+  - name: repuestos-auto-db
+    databaseName: repuestosauto
+    user: repuestosauto_user
+    plan: free
