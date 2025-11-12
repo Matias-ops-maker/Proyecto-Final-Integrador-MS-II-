@@ -1,0 +1,305 @@
+/* MercadoPago Checkout Component */
+.mercadopago-checkout {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.payment-summary {
+  background: #f8fafc;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.payment-summary h3 {
+  margin: 0 0 16px 0;
+  color: #1e293b;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.items-list {
+  margin-bottom: 16px;
+}
+
+.item-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.item-summary:last-child {
+  border-bottom: none;
+}
+
+.item-name {
+  flex: 1;
+  font-weight: 500;
+}
+
+.item-quantity {
+  margin: 0 12px;
+  color: #64748b;
+}
+
+.item-price {
+  font-weight: 600;
+  color: #059669;
+}
+
+.total-summary {
+  text-align: right;
+  padding-top: 12px;
+  border-top: 2px solid #e2e8f0;
+  font-size: 18px;
+  color: #1e293b;
+}
+
+.payment-methods h3 {
+  margin: 0 0 16px 0;
+  color: #1e293b;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Loading and Error States */
+.mercadopago-loading,
+.mercadopago-error {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e2e8f0;
+  border-top: 4px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 16px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.btn-retry {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.btn-retry:hover {
+  background: #2563eb;
+}
+
+/* Payment Result Pages */
+.payment-result-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+}
+
+.payment-result-card {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Icons */
+.success-icon,
+.failure-icon,
+.pending-icon {
+  margin: 0 auto 24px;
+  width: 64px;
+  height: 64px;
+}
+
+/* Headings */
+.payment-result-card h1 {
+  margin: 0 0 16px 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.success h1 {
+  color: #059669;
+}
+
+.failure h1 {
+  color: #dc2626;
+}
+
+.pending h1 {
+  color: #d97706;
+}
+
+/* Messages */
+.success-message,
+.failure-message,
+.pending-message {
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+/* Payment Details */
+.payment-details {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 24px 0;
+  text-align: left;
+}
+
+.payment-details h3 {
+  margin: 0 0 16px 0;
+  color: #1e293b;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-row span:first-child {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.detail-row span:last-child {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.status-approved {
+  color: #059669 !important;
+}
+
+.status-rejected {
+  color: #dc2626 !important;
+}
+
+.status-pending {
+  color: #d97706 !important;
+}
+
+/* Additional Info Sections */
+.failure-reasons,
+.pending-info {
+  background: #fef3c7;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 24px 0;
+  text-align: left;
+}
+
+.failure-reasons h3,
+.pending-info h3 {
+  margin: 0 0 12px 0;
+  color: #92400e;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.failure-reasons ul,
+.pending-info ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #92400e;
+}
+
+.failure-reasons li,
+.pending-info li {
+  margin-bottom: 8px;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.btn-primary,
+.btn-secondary {
+  flex: 1;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  font-size: 14px;
+}
+
+.btn-primary {
+  background: #3b82f6;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: white;
+  color: #3b82f6;
+  border: 2px solid #3b82f6;
+}
+
+.btn-secondary:hover {
+  background: #f1f5f9;
+  transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .payment-result-container {
+    padding: 12px;
+  }
+  
+  .payment-result-card {
+    padding: 24px;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+  
+  .mercadopago-checkout {
+    margin: 12px;
+    padding: 16px;
+  }
+}
