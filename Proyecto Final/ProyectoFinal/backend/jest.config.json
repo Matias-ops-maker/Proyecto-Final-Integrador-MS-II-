@@ -1,0 +1,20 @@
+{
+  "type": "module",
+  "testEnvironment": "node",
+  "setupFilesAfterEnv": ["<rootDir>/tests/setup.js"],
+  "testMatch": [
+    "<rootDir>/tests/**/*.test.js"
+  ],
+  "collectCoverageFrom": [
+    "src/**/*.js",
+    "!src/seed.js",
+    "!src/migrate.js"
+  ],
+  "coverageDirectory": "coverage",
+  "coverageReporters": ["text", "lcov", "html"],
+  "transform": {},
+  "extensionsToTreatAsEsm": [".js"],
+  "globals": {
+    "__dirname": true
+  }
+}
