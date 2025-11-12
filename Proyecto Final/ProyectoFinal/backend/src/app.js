@@ -14,12 +14,13 @@ import cartRoutes from './routes/cart.js';
 import orderRoutes from './routes/orders.js';
 import userRoutes from './routes/users.js';
 import reportRoutes from './routes/reports.js';
+import publicReportRoutes from './routes/publicReports.js';
 import paymentRoutes from './routes/payments.js';
 
 const app = express();
 
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http:
+  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
   credentials: true
 }));
 app.use(express.json());
@@ -35,6 +36,7 @@ app.use('/api/cart', cartRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/reports', reportRoutes);
+app.use('/api/public-reports', publicReportRoutes);
 app.use('/api/payments', paymentRoutes);
 
 app.get('/health', (req, res) => res.json({

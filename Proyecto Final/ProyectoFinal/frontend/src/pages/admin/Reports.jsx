@@ -9,11 +9,11 @@ export default function Reports() {
         try {
         const token = localStorage.getItem('token');
         if (!token) {
-            alert('Debes iniciar sesiÃ³n como administrador');
+            alert('Debes iniciar sesión como administrador');
             return;
         }
 
-        const res = await fetch(`http:
+        const res = await fetch(`http://localhost:4000/api/reports/${type === 'pdf' ? 'pdf' : 'xlsx'}`, {
             headers: { 
                 "x-api-key": "mi_api_key_super_secreta",
                 "Authorization": `Bearer ${token}`

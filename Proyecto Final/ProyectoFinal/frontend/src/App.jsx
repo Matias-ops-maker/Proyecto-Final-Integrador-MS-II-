@@ -22,6 +22,7 @@ import PaymentSuccess from "./pages/PaymentSuccess"
 import PaymentFailure from "./pages/PaymentFailure"
 import PaymentPending from "./pages/PaymentPending"
 import Perfil from "./pages/usuario/Perfil"
+import PublicReports from "./pages/PublicReports"
 
 function AdminLayout() {
     return (
@@ -71,6 +72,7 @@ export default function App() {
                 <Route path="/payment-failure" element={<PaymentFailure />} />
                 <Route path="/payment-pending" element={<PaymentPending />} />
                 <Route path="/perfil" element={<Perfil />} />
+                <Route path="/reports" element={<PublicReports />} />
                 <Route path="/admin/*" element={<AdminLayout />} />
             </Routes>
         </BrowserRouter>
